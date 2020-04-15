@@ -1,17 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `vn-ki | 0xfabe`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Vishnunarayan K I`,
+      summary: ``,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `My Blog`,
+    siteUrl: `https://blog.0xfa.be`,
     social: {
-      twitter: `kylemathews`,
+      github: `vn-ki`,
+      twitter: `__vnki__`,
     },
   },
   plugins: [
+    'gatsby-plugin-use-dark-mode',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
