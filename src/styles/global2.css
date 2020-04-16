@@ -29,6 +29,8 @@ body {
 
   background-color: var(--bg);
   --color-selection: #ECC8A3;
+
+  transition: background-color 0.35s ease-out;
 }
 
 body.dark {
