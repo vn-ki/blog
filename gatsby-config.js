@@ -14,6 +14,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-dark-mode',
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
