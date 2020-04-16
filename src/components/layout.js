@@ -66,7 +66,7 @@ const Layout = ({ location, title, children }) => {
         onClick={_ => toggleTheme(theme === 'light' ? 'dark' : 'light')}
         style={{
           fontFamily: `monospace`,
-          position: `fixed`,
+          position: `absolute`,
           top: `10px`,
           right: `10px`
         }}
