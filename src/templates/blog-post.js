@@ -22,6 +22,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
+              color: `var(--fg)`,
             }}
           >
             {post.frontmatter.title}
@@ -31,12 +32,15 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               ...scale(-1 / 5),
               display: `block`,
               marginBottom: rhythm(1),
+              color: `var(--fg)`,
             }}
           >
             {post.frontmatter.date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section 
+          className='article'
+          dangerouslySetInnerHTML={{ __html: post.html }} />
       </article>
     </Layout>
   )

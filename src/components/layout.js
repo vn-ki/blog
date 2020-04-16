@@ -1,6 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+
+import sun from "./images/sun.png"
+import moon from "./images/moon.png"
+
+
 import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
@@ -9,23 +15,28 @@ const Layout = ({ location, title, children }) => {
 
   if (location.pathname === rootPath) {
     header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-          marginTop: 0,
-        }}
-      >
-        <Link
+      <div>
+        <h1
           style={{
-            boxShadow: `none`,
-            color: `inherit`,
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+            marginTop: 0,
           }}
-          to={`/`}
+          className="header-link"
         >
-          {title}
-        </Link>
-      </h1>
+          <Link
+            style={{
+              boxShadow: `none`,
+              color: `inherit`,
+              borderBottom: `none`, // to remove border from anchor
+            }}
+            className="header-link"
+            to={`/`}
+          >
+            {title}
+          </Link>
+        </h1>
+      </div>
     )
   } else {
     header = (
@@ -34,12 +45,14 @@ const Layout = ({ location, title, children }) => {
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
         }}
+        className="header-link-2"
       >
         <Link
           style={{
             boxShadow: `none`,
             color: `inherit`,
           }}
+          className="header-link-2"
           to={`/`}
         >
           {title}
@@ -47,6 +60,28 @@ const Layout = ({ location, title, children }) => {
       </h3>
     )
   }
+  let theme_toggle = (<ThemeToggler>
+    {({ theme, toggleTheme }) => (
+      <label
+        onClick={_ => toggleTheme(theme === 'light' ? 'dark' : 'light')}
+        style={{
+          fontFamily: `monospace`,
+          position: `fixed`,
+          top: `10px`,
+          right: `10px`
+        }}
+      >
+        {theme === 'dark' ? (
+          <img width="40px"src={sun} alt="Light mode" />
+            //<p>0xfff</p>
+        ) : (
+          <img width="40px" src={moon} alt="Light mode" />
+          //<p>0x000</p>
+        )}
+
+      </label>
+    )}
+  </ThemeToggler>)
   return (
     <div
       style={{
@@ -56,7 +91,7 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header}</header>
+      <header>{header} {theme_toggle}</header>
       <main>{children}</main>
     </div>
   )
