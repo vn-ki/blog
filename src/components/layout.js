@@ -29,10 +29,8 @@ const Layout = ({ location, title, children }) => {
         {console.log(theme)}
         {theme === 'dark' ? (
           <img style={{margin: `0px`, height: rhythm(size), width: rhythm(size)}} src={sun} alt="Light mode" />
-          //<p>0xfff</p>
         ) : (
           <img style={{margin: `0px`, height: rhythm(size), width: rhythm(size)}} src={moon} alt="Light mode" />
-          //<p>0x000</p>
         )}
 
       </label>
