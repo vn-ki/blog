@@ -101,29 +101,6 @@ const Layout = ({ location, title, children }) => {
       </div>
     )
   }
-  let theme_toggle = (<ThemeToggler>
-    {({ theme, toggleTheme }) => (
-      <label
-        onClick={_ => toggleTheme(theme === 'light' ? 'dark' : 'light')}
-        style={{
-          fontFamily: `monospace`,
-          position: `absolute`,
-          top: `10px`,
-          right: `10px`
-        }}
-      >
-        {console.log(theme)}
-        {theme === 'dark' ? (
-          <img width="40px"src={sun} alt="Light mode" />
-            //<p>0xfff</p>
-        ) : (
-          <img width="40px" src={moon} alt="Light mode" />
-          //<p>0x000</p>
-        )}
-
-      </label>
-    )}
-  </ThemeToggler>)
   return (
     <div
       style={{
@@ -133,7 +110,7 @@ const Layout = ({ location, title, children }) => {
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}
     >
-      <header>{header} {}</header>
+      <header>{header}</header>
       <main>{children}</main>
     </div>
   )
