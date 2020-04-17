@@ -23,6 +23,7 @@ const Layout = ({ location, title, children }) => {
           marginBottom: `auto`,
           height: rhythm(size),
           width: rhythm(size),
+          flex: `none`, // so that it doesnt shrink
         }}
       >
         {console.log(theme)}
@@ -48,7 +49,7 @@ const Layout = ({ location, title, children }) => {
         }}>
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(1),
             marginBottom: 0,
             marginTop: 0,
           }}
@@ -66,7 +67,7 @@ const Layout = ({ location, title, children }) => {
             {title}
           </Link>
         </h1>
-        {flexThemeToggle(1.5)}
+        {flexThemeToggle(1.25)}
       </div>
     )
   } else {
@@ -74,6 +75,7 @@ const Layout = ({ location, title, children }) => {
       <div style={{
         display: `flex`,
         margin: '0px',
+        justifyContent: `space-between`,
         }}>
         <h3
           style={{
