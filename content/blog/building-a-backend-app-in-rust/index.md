@@ -28,7 +28,7 @@ So I decided to use scraper for my project. Soon the problems of a not-well-thou
 
 ### Are we web yet?
 
-[arewewebyet.org](https://www.arewewebyet.org/) says we are. But I disagree. It's 'Kinda yes, only if you are okay with confusing errors and code'. For a user coming from a Go, node or python, Rust is not web yet. I considered the following web frameworks to choose:
+[arewewebyet.org](https://www.arewewebyet.org/) says we are. But I disagree. It's 'Kinda yes, only if you are okay with confusing errors and code'. For a user coming from a Go, node or python, Rust is not web yet. I considered the following web frameworks to choose from:
 
 - actix: too much boilerplate and complexity for the simple service I'm writing
 - rocket: version 0.4 (the release at the time of writing) does not support async (0.5, the next version do)
@@ -74,8 +74,7 @@ pub async fn get_movies_of_user(&self, username: &str) -> Result<Vec<Film>> {
     Ok(films)
 }
 ```
-
-It's nothing too werid, right?
+All it does is it gets how many pages of films a user has rated and scrapes each page and extract films from it. Nothing too weird, right?
 
 **Wrong**
 
