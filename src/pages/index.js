@@ -19,22 +19,23 @@ const BlogIndex = ({ data, location }) => {
             <header>
               <h3
                 style={{
-                  fontFamily: `montserrat`,
                   marginBottom: rhythm(1 / 4),
                   marginTop: rhythm(1.5),
-                  fontWeight: `600`
                 }}
               >
                 <small
                   style={{
+                    fontFamily: `Montserrat, sans-serif`,
                     fontSize: rhythm(0.5),
-                    fontWeight: `normal`,
+                    fontWeight: `600`,
                     color: `var(--fg)`,
                     marginRight: rhythm(1/4)
                   }}
                 >{node.frontmatter.date} </small>
                 <Link 
                   style={{ 
+                    fontFamily: `Montserrat, sans-serif`,
+                    fontWeight: `800`,
                     boxShadow: `none`,
                   }} to={node.fields.slug}>
                   {title}
